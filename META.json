@@ -17,6 +17,7 @@
       "build" : {
          "requires" : {
             "Alien::Base::ModuleBuild" : "0.006",
+            "Alien::bison" : "0",
             "Capture::Tiny" : "0",
             "Module::Build" : "0",
             "Test::More" : "0"
@@ -43,7 +44,7 @@
    "provides" : {
       "Alien::gputils" : {
          "file" : "lib/Alien/gputils.pm",
-         "version" : "0.03"
+         "version" : "0.04"
       }
    },
    "release_status" : "stable",
@@ -58,5 +59,5 @@
          "url" : "https://github.com/selectiveintellect/p5-alien-gputils"
       }
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }

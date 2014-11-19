@@ -3,31 +3,32 @@ abstract: 'Alien module for gputils from http://gputils.sourceforge.net'
 author:
   - 'Vikas N. Kumar <vikas@cpan.org>'
 build_requires:
-  Alien::Base::ModuleBuild: 0.006
-  Module::Build: 0
-  Test::More: 0
+  Alien::Base::ModuleBuild: '0.006'
+  Module::Build: '0'
+  Test::More: '0'
 configure_requires:
-  Alien::Base: 0.006
-  Alien::Base::ModuleBuild: 0.006
-  Module::Build: 0
+  Alien::Base: '0.006'
+  Alien::Base::ModuleBuild: '0.006'
+  Module::Build: '0'
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4207, CPAN::Meta::Converter version 2.132661'
+generated_by: 'Module::Build version 0.4208, CPAN::Meta::Converter version 2.142690'
 license: apache
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Alien-gputils
 provides:
   Alien::gputils:
     file: lib/Alien/gputils.pm
-    version: 0.01
+    version: '0.02'
 requires:
-  Alien::Base: 0
-  File::ShareDir: 1.00
-  File::Spec: 0
+  Alien::Base: '0'
+  File::ShareDir: '1.00'
+  File::Spec: '0'
+  File::Which: '0'
   perl: v5.10.0
 resources:
   bugtracker: https://github.com/selectiveintellect/p5-alien-gputils/issues
   license: http://www.apache.org/licenses/LICENSE-1.1
   repository: https://github.com/selectiveintellect/p5-alien-gputils
-version: 0.01
+version: '0.02'

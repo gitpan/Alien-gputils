@@ -4,7 +4,7 @@
       "Vikas N. Kumar <vikas@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4208",
+   "generated_by" : "Module::Build version 0.4207",
    "license" : [
       "apache_1_1"
    ],
@@ -17,6 +17,7 @@
       "build" : {
          "requires" : {
             "Alien::Base::ModuleBuild" : "0.006",
+            "Capture::Tiny" : "0",
             "Module::Build" : "0",
             "Test::More" : "0"
          }
@@ -25,6 +26,7 @@
          "requires" : {
             "Alien::Base" : "0.006",
             "Alien::Base::ModuleBuild" : "0.006",
+            "Capture::Tiny" : "0",
             "Module::Build" : "0"
          }
       },
@@ -41,7 +43,7 @@
    "provides" : {
       "Alien::gputils" : {
          "file" : "lib/Alien/gputils.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       }
    },
    "release_status" : "stable",
@@ -56,5 +58,5 @@
          "url" : "https://github.com/selectiveintellect/p5-alien-gputils"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }

@@ -1,10 +1,18 @@
 package Alien::gputils;
 use strict;
 use warnings;
+use Env qw(@PATH);
+
+if ($^O =~ /mswin32/i) {
+    foreach (qw{PROGRAMFILES ProgramFiles PROGRAMFILES(X86)
+                ProgramFiles(X86) ProgamFileW6432 PROGRAMFILESW6432}) {
+        push @PATH, File::Spec->catdir($ENV{$_}, 'gputils', 'bin') if exists $ENV{$_};
+    }
+}
 use File::Which qw(which);
 use File::Spec;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 $VERSION = eval $VERSION;
 
 use parent 'Alien::Base';
@@ -14,10 +22,12 @@ sub _get_gputils {
     my $type = shift;
     my $bd = $self->bin_dir;
     if (defined $bd) {
-        my $exe = File::Spec->catfile($bd, $type);
+        my $ext = ($^O =~ /mswin32/i) ? '.exe' : '';
+        my $exe = File::Spec->catfile($bd, "$type$ext");
         return $exe if (defined $exe and -e $exe);
     }
-    return which($type);
+    my ($exe2) = which($type);
+    return $exe2;
 }
 sub gpasm { return $_[0]->_get_gputils('gpasm'); }
 sub gplink { return $_[0]->_get_gputils('gplink'); }
@@ -56,7 +66,7 @@ The source code is taken from L<http://gputils.sourceforge.net>.
 
 =head1 VERSION
 
-0.05
+0.06
 
 =head1 METHODS
 

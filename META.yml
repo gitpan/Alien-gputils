@@ -23,7 +23,7 @@ name: Alien-gputils
 provides:
   Alien::gputils:
     file: lib/Alien/gputils.pm
-    version: 0.06
+    version: 0.07
 requires:
   Alien::Base: 0.006
   File::ShareDir: 1.00
@@ -34,4 +34,4 @@ resources:
   bugtracker: https://github.com/selectiveintellect/p5-alien-gputils/issues
   license: http://www.apache.org/licenses/LICENSE-1.1
   repository: https://github.com/selectiveintellect/p5-alien-gputils
-version: 0.06
+version: 0.07

@@ -6,13 +6,15 @@ use Env qw(@PATH);
 if ($^O =~ /mswin32/i) {
     foreach (qw{PROGRAMFILES ProgramFiles PROGRAMFILES(X86)
                 ProgramFiles(X86) ProgamFileW6432 PROGRAMFILESW6432}) {
-        push @PATH, File::Spec->catdir($ENV{$_}, 'gputils', 'bin') if exists $ENV{$_};
+        next unless exists $ENV{$_};
+        my $dir = ($ENV{$_} =~ /\s+/) ? Win32::GetShortPathName($ENV{$_}) : $ENV{$_};
+        push @PATH, File::Spec->catdir($dir, 'gputils', 'bin') if $dir;
     }
 }
 use File::Which qw(which);
 use File::Spec;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 $VERSION = eval $VERSION;
 
 use parent 'Alien::Base';
@@ -66,7 +68,7 @@ The source code is taken from L<http://gputils.sourceforge.net>.
 
 =head1 VERSION
 
-0.06
+0.07
 
 =head1 METHODS
 
